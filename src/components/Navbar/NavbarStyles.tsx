@@ -35,7 +35,6 @@ export const Logo = styled.div`
   }
 `;
 export const Links = styled.div`
-  line-height: 100px;
   min-width: 600px;
   height: 100%;
   display: flex;
@@ -51,7 +50,8 @@ export const Links = styled.div`
     height: 100%;
     li {
       color: ${textColor};
-      height: 40px;
+      max-height: 40px;
+      padding: 8px;
       display: flex;
       align-items: center;
       cursor: pointer;
@@ -63,6 +63,7 @@ export const Links = styled.div`
         padding: 0px 25px 0px 15px;
         border-radius: 20px;
         display: flex;
+        padding: 10px 25px 10px 10px;
         svg {
           position: absolute;
           right: 5px;
