@@ -16,7 +16,6 @@ const Navbar = () => {
         <ul>
           <li style={{ color: "#878dff" }}>Oferty</li>
           <li>Profile użytkowników</li>
-          <li>Profile firm</li>
           <li>
             Zaloguj się
             <RiArrowDownSLine />

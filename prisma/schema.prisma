@@ -15,6 +15,7 @@ model User {
   username String
   name String
   lastname String
+  email String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }

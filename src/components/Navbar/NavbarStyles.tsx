@@ -23,7 +23,6 @@ export const Nav = styled.div`
     z-index: -1;
   }
 `;
-
 export const Logo = styled.div`
   min-width: 150px;
   font-family: "Suez One", serif;
@@ -57,7 +56,7 @@ export const Links = styled.div`
       cursor: pointer;
       position: relative;
       transition: ${transition};
-      &:nth-child(4) {
+      &:nth-child(3) {
         background-color: ${mainBgColor};
         color: white;
         padding: 0px 25px 0px 15px;
