@@ -1,9 +1,10 @@
 import type { NextPage } from "next";
-import Navbar from "../components/Navbar/Navbar";
-import Filters from "../components/Filters/Filters";
-import Offerts from "../components/Offerts/Offerts";
-import Map from "../components/Map/Map";
 import Head from "next/head";
+
+/* -- Components imports -- */
+import { Navbar } from "../components/ReusedComponents/Navbar/Navbar";
+import { FindJobOfferPage } from "../components/FindJobOfferPage/FindJobOfferPage";
+
 const Home: NextPage = () => {
   return (
     <>
@@ -12,11 +13,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="" />
       </Head>
       <Navbar />
-      <Filters />
-      <main>
-        <Offerts />
-        <Map />
-      </main>
+      <FindJobOfferPage/>
     </>
   );
 };
