@@ -3,6 +3,9 @@ import React, { FC } from "react";
 /* -- Components imports -- */
 import { NavbarOptionsWrapper } from "./NavbarOptionsStyled";
 
+/* -- IMG and Icons imports -- */
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+
 export const NavList : FC = () => {
     return(
         <NavbarOptionsWrapper>
@@ -12,8 +15,8 @@ export const NavList : FC = () => {
                 <li>Firmy</li>
             </ul>
             <div className="navbar-access-btns-wrapper">
-                <button>Login</button>
-                <button>Register</button>
+                <button>Logowanie<ArrowDropDownIcon/></button>
+                <button>Rejestracja<ArrowDropDownIcon/></button>
             </div>
         </NavbarOptionsWrapper>
     );
