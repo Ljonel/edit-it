@@ -11,6 +11,7 @@ export const JobOfferTailWrapper = styled.div`
     margin: 10px auto;
     font-size: 12px;
     position: relative;
+    font-family: 'Roboto', sans-serif;
 
     .base-company-info-wrapper{
         min-width: 20%;
