@@ -35,7 +35,8 @@ export const NavbarOptionsWrapper = styled.div`
     background-color: #9671d6;
     box-sizing: border-box;
     margin: 2px 10px;
-    padding: 8px 0.5rem 8px 1rem;
+    /* padding: 8px 0.5rem 8px 1rem; */
+    padding: 8px 15px;
     border-radius: 20px;
     font-size: 0.9rem;
     outline: none;
@@ -45,5 +46,9 @@ export const NavbarOptionsWrapper = styled.div`
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    transition: all 0.3s;
+    &:hover {
+      background-color: #3a3476;
+    }
   }
 `;

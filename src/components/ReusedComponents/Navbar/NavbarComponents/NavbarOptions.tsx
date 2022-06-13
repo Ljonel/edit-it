@@ -1,23 +1,41 @@
 import React, { FC } from "react";
-
-/* -- Components imports -- */
+import { useRouter } from "next/router";
 import { NavbarOptionsWrapper } from "./NavbarOptionsStyled";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import { useSession, signIn, signOut } from "next-auth/react";
 
-/* -- IMG and Icons imports -- */
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+export const NavList = () => {
+  const router = useRouter();
+  const { data: session }: any = useSession();
 
-export const NavList : FC = () => {
-    return(
-        <NavbarOptionsWrapper>
-            <ul>
-                <li>Oferty</li>
-                <li>Użytkownicy</li>
-                <li>Firmy</li>
-            </ul>
-            <div className="navbar-access-btns-wrapper">
-                <button>Logowanie<ArrowDropDownIcon/></button>
-                <button>Rejestracja<ArrowDropDownIcon/></button>
-            </div>
-        </NavbarOptionsWrapper>
-    );
+  return (
+    <NavbarOptionsWrapper>
+      <ul>
+        <li onClick={() => router.push("/")}>Oferty</li>
+        <li onClick={() => router.push("users")}>Użytkownicy</li>
+        {/* <li onClick={() => router.push("companies")}>Firmy</li> */}
+      </ul>
+      <div className="navbar-access-btns-wrapper">
+        {session ? (
+          <>
+            <button onClick={() => router.push("/profile")}>
+              {session.user.email}
+            </button>
+            <button onClick={() => signOut()}>Wyloguj</button>
+          </>
+        ) : (
+          <>
+            <button onClick={() => router.push("/auth/signin")}>
+              Logowanie
+              {/* <ArrowDropDownIcon /> */}
+            </button>
+            {/* <button>
+              Rejestracja
+              <ArrowDropDownIcon />
+            </button> */}
+          </>
+        )}
+      </div>
+    </NavbarOptionsWrapper>
+  );
 };
