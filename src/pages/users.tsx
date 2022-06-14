@@ -1,4 +1,5 @@
 import { PrismaClient } from "@prisma/client";
+import { useSession } from "next-auth/react";
 import React, { useEffect } from "react";
 import { Navbar } from "../components/ReusedComponents/Navbar/Navbar";
 import { UsersList } from "../components/UsersList/UsersListStyled";
@@ -30,10 +31,10 @@ const users = ({ users }: any) => {
 };
 
 export default users;
+
 export const getServerSideProps = async (context: any) => {
   const prisma = new PrismaClient();
   const users = await prisma.user.findMany();
-  console.log(users);
   prisma.$disconnect();
   return {
     props: {

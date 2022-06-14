@@ -12,7 +12,7 @@ import {
   getProviders,
 } from "next-auth/react";
 import { PrismaClient } from "@prisma/client";
-import Profile from "../components/Profile/Profile";
+import CreateProfile from "../components/Profile/CreateProfile";
 
 const Home: NextPage = ({ profile }: any) => {
   const { data: session }: any = useSession();
@@ -20,7 +20,7 @@ const Home: NextPage = ({ profile }: any) => {
   return (
     <>
       {session && !profile ? (
-        <Profile />
+        <CreateProfile />
       ) : (
         <>
           <Head>
@@ -53,7 +53,6 @@ export const getServerSideProps = async (context: any) => {
   const profile = await prisma.profile.findUnique({
     where: { email: session.user.email },
   });
-  console.log(profile);
   return {
     props: {
       providers,

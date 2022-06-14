@@ -1,6 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { FormContainer } from "./ProfileStyled";
+import { FormContainer } from "./CreateProfileStyled";
 import axios, { AxiosRequestConfig } from "axios";
 import { useRouter } from "next/router";
 import { signOut } from "next-auth/react";
@@ -10,6 +10,7 @@ import { signOut } from "next-auth/react";
 export default function Profile() {
   const { register, handleSubmit } = useForm();
   const router = useRouter();
+
   const onSubmitForm = async (values: any) => {
     const config: AxiosRequestConfig = {
       url: "/api/createprofile",

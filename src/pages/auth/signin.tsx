@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-
 import {
   getProviders,
   getSession,
@@ -12,7 +11,6 @@ import {
   LoginPageWrapper,
   BackLink,
 } from "../../components/LoginPage/LoginPageStyled";
-/* -- IMG and Icons imports -- */
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
@@ -21,13 +19,12 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import hello from "../../assets/hello.svg";
 import { useRouter } from "next/router";
 import { BsArrowLeftCircleFill } from "react-icons/bs";
+//
+
 export default function Signin({ providers }: any) {
   const { data: session }: any = useSession();
   const router = useRouter();
 
-  if (session) {
-    console.log(session.user);
-  }
   return (
     <div>
       <BackLink onClick={() => router.push("/")}>
