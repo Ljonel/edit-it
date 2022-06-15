@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 export const NavbarWrapper = styled.nav`
   width: 100vw;
-  padding: 0.6rem 3rem;
+  height: 80px;
+  padding: 0px 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
